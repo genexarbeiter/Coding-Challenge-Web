@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="message-list">
+    <ng-container *ngFor="let entry of (data$ | async)">
+      <p [class]="'from-' + (entry.nickname === nickname ? 'me' : 'them')">
+        <span>{{ entry.nickname }}</span><br>
+        {{ entry.message }}<br>
+        <span style="font-size: x-small">{{entry.sentAt | date: 'dd.MM.yy hh:mm'}}</span>
+      </p>
+    </ng-container>
+
+    <form (keydown)="onKeyDown($event)">
+      <input id="message" type="text" style="margin-top: 50px;">
+    </form>
+  </div>
+</div>
