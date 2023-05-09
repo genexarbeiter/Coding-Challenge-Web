@@ -4,7 +4,7 @@
       <p [class]="'from-' + (entry.nickname === nickname ? 'me' : 'them')">
         <span>{{ entry.nickname }}</span><br>
         {{ entry.message }}<br>
-        <span style="font-size: x-small">{{entry.sentAt | date: 'dd.MM.yy hh:mm'}}</span>
+        <span style="font-size: x-small">{{entry.sentAt | date: 'dd.MM.yy HH:mm'}}</span>
       </p>
     </ng-container>
 

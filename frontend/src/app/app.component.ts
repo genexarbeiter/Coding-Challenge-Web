@@ -19,6 +19,7 @@ export class AppComponent {
     this.data$ = alienService.getData();
   }
 
+
   onKeyDown(event: KeyboardEvent) {
     if (event.key === "Enter") {
       this.sendMessage();
@@ -34,6 +35,5 @@ export class AppComponent {
     }
     this.alienService.sendData(message).subscribe(() => {
       this.data$ = this.alienService.getData();
-    });
-  }
+    });}
 }

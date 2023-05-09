@@ -51,6 +51,6 @@ function readDataBase() {
   const encoded = fs.readFileSync('./data/gibberish.enc', 'utf8');
   const decoded = atob(encoded);
   let messages: Message[] = JSON.parse(decoded);
-
+  messages.sort((a, b) => a.sentAt < b.sentAt ? -1 : 1);
   return messages;
 }
